@@ -30,13 +30,13 @@ const FollowUs = () => {
     return (
         <Div className='container'>
             <div className='follow-icons'>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI(window.location.href)}`} target="_blank" rel="noreferrer" className='facebook'>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURI("window.location.href")}`} target="_blank" rel="noreferrer" className='facebook'>
                     <i className="fab fa-facebook-square"></i>
                 </a>
-                <a target="_blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURI(window.location.href)}&title=Aksha%20Foundation&summary=Aksha,%20a%20Bill%20and%20Melinda%20Gates%20Foundation%20initiative%20convenes%20knowledge&source=LinkedIn`} rel="noreferrer" className='linked-in'>
+                <a target="_blank" href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURI("window.location.href")}&title=Aksha%20Foundation&summary=Aksha,%20a%20Bill%20and%20Melinda%20Gates%20Foundation%20initiative%20convenes%20knowledge&source=LinkedIn`} rel="noreferrer" className='linked-in'>
                     <i className="fab fa-linkedin"></i>
                 </a>
-                <a href={`https://twitter.com/intent/tweet?text=${encodeURI(window.location.href)}`} target="_blank" rel="noreferrer" className='twitter'>
+                <a href={`https://twitter.com/intent/tweet?text=${encodeURI("window.location.href")}`} target="_blank" rel="noreferrer" className='twitter'>
                     <i className="fab fa-twitter-square"></i>
                 </a>
             </div>
