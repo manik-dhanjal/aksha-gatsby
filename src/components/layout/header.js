@@ -114,6 +114,7 @@ nav>div{
 `
 const Header = () => {
     const [navMenu,setNavMenu] = useState(false)
+    const [search,setSearch] = useState('')
     return (
         <SHeader menu={navMenu?'400px':'0'}>
             <nav >
@@ -130,7 +131,7 @@ const Header = () => {
                         </ul>
                         <ul className='search-menu'>
                             <li className='search'>
-                                <input type='text' className='text-box' placeholder='Search' defaultValue="" value="" onChange={()=>console.log('typed')}/>
+                                <input type='text' className='text-box' placeholder='Search' value={search} onChange={(e)=>setSearch(e.target.value)}/>
                                 <button className='submit'><i className="fas fa-search"></i></button>
                             </li>
                             <li className='bookmark'>

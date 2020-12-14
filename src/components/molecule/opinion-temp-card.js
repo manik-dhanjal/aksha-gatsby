@@ -24,6 +24,14 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
     }
     .image{
         width:40%;
+        align-self:center;
+        height:calc( (924px * 0.4) * 0.8);
+        overflow:hidden;
+        img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
     }
 }
 .readmore-btn>a{
@@ -44,6 +52,7 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
         }
         .image{
             width:50%;
+            height:calc( ( (100vw - 110px) * 0.5) * 0.67);
         }
     }
 }
@@ -56,6 +65,7 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
         }
         .image{
             width:100%;
+            height:calc( ( 100vw - 60px ) * 0.67);
         }
     }
 }

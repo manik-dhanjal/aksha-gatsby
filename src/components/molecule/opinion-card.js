@@ -7,6 +7,16 @@ width:100%;
 .img-cont{
     width:100%;
     margin-bottom:20px;
+    height:calc( ( ( 100vw - 300px) / 3 ) * 0.7 );
+    background:black;
+    min-height:190px;
+    overflow:hidden;
+    postion:relative;
+    img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+    }
 }
 .title{
     margin-bottom:10px;
@@ -29,9 +39,9 @@ width:100%;
     min-width:280px;
 }
 `
-const Card = ({img,title,desc,url}) => {
+const Card = ({img,title,desc,slug}) => {
     return (
-        <Div>
+        <Div >
             <div className='img-cont'>
                 <img src={img} alt={title}/>
             </div>
@@ -41,7 +51,7 @@ const Card = ({img,title,desc,url}) => {
             <p className='description'>
                 {desc}
             </p>
-            <div className='readmore-btn'><Link to={url}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>
+            <div className='readmore-btn'><Link to={"opinion/"+slug}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>
         </Div>
     )
 }
