@@ -19,6 +19,12 @@ const Div = styled.div`
         }
         .image{
             width:50%;
+            height:90%;
+            img{
+                object-fit:contain;
+                width:100%;
+                height:100%;
+            }
         }
     }
     & .content{
