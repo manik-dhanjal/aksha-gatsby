@@ -7,9 +7,10 @@ const Div = styled.div`
     .banner>div{
         display:flex;
         background:rgba(242,161,0);
-        height:65vh;
         align-items:center;
         gap:100px;
+        padding-top:50px;
+        padding-bottom:50px;
         .head{
             width:50%;
             p{
@@ -19,11 +20,12 @@ const Div = styled.div`
         }
         .image{
             width:50%;
-            height:90%;
+            height:100%;
             img{
                 object-fit:contain;
                 width:100%;
                 height:100%;
+                max-height:50vh;
             }
         }
     }
@@ -40,6 +42,19 @@ const Div = styled.div`
         }
         h2{
             color:black !important;
+        }
+    }
+    @media screen and (max-width:1024px){
+        text-align:center;
+        .banner>div{
+            flex-direction:column;
+            gap:30px;
+            .head{
+                width:100%;
+            }
+            .image{
+                width:100%;
+            }
         }
     }
 `
