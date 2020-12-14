@@ -70,7 +70,8 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
     }
 }
 `
-const Card = ({img,title,url,desc,i}) => {
+const Card = ({img,title,slug,desc,i}) => {
+    console.log(slug)
     return (
         <Div i={i}>
             <div className='container'>
@@ -81,7 +82,7 @@ const Card = ({img,title,url,desc,i}) => {
                     <div className='content'>
                         <h3>{title}</h3>
                         <p>{desc}</p>
-                        <div className='readmore-btn'><Link to={url}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>
+                        <div className='readmore-btn'><Link to={slug}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>
                     </div>
                 </div>
             </div>
