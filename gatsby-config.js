@@ -37,13 +37,5 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
-    {
-      resolve: "gatsby-source-graphql",
-      options: {
-        typeName: "WPGraphQL",
-        fieldName: "wpgraphql",
-        url: `https://aksha.visit.2626.today/graphql`,
-      },
-    },
   ],
 };
