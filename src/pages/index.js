@@ -35,7 +35,14 @@ query homeQuery {
           acf {
             short_description
             banner_image {
-              source_url
+                source_url
+                localFile {
+                  childImageSharp {
+                        fluid(maxWidth: 500) {
+                        src
+                      }
+                  }
+                }
             }
           }
         }

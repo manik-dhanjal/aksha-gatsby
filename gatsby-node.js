@@ -1,6 +1,4 @@
 const path = require("path")
-const React = require('react')
-const ReactDOMServer = require('react-dom/server')
 const Img = require(`gatsby-image`)
 
 exports.createPages = async ({graphql,actions}) => {
@@ -18,11 +16,21 @@ query MyQuery {
           short_description
           banner_image {
             source_url
+            localFile {
+              childImageSharp {
+                    fluid(maxWidth: 500) {
+                    src
+                  }
+              }
+            }
           }
+          publishing_date
+          publisher_name
         }
       }
     }
   }
+  
   
 
   

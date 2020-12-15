@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
+import Img from "gatsby-image"
 const Div = styled.div`
 background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
 .card{
@@ -21,16 +22,18 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
         p{
             margin-bottom:30px;
         }
+        .reading-time{
+            margin-top:10px;
+        }
     }
     .image{
         width:40%;
         align-self:center;
         height:calc( (924px * 0.4) * 0.8);
         overflow:hidden;
-        img{
+        &>div{
             width:100%;
             height:100%;
-            object-fit:cover;
         }
     }
 }
@@ -70,18 +73,22 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
     }
 }
 `
-const Card = ({img,title,slug,desc,i}) => {
+const Card = ({img,title,slug,desc,i,time}) => {
     console.log(slug)
     return (
         <Div i={i}>
             <div className='container'>
                 <div className='card'>
                     <div className='image'>
-                        <img src={img} alt={title}/>
+                    <Img fluid={img} alt={title}/>
                     </div>
                     <div className='content'>
                         <h3>{title}</h3>
                         <p>{desc}</p>
+                        <div className='reading-time'>
+                            jj
+                                    <i class="far fa-clock"></i> {time}
+                        </div>
                         <div className='readmore-btn'><Link to={slug}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>
                     </div>
                 </div>

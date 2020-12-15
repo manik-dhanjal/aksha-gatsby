@@ -3,13 +3,14 @@ import { graphql } from "gatsby"
 import Layout from '../components/layout'
 import Head from '../components/atom/template-head'
 import Card from '../components/molecule/opinion-temp-card'
+import readingTime from 'reading-time'
 
 const Opinion = ({data}) => {
     const opinionData = data.allWordpressWpOpinion.nodes;
     return (
         <Layout>
             <Head>Opinion</Head>
-            {opinionData.map((posts,i)=><Card {...posts} desc={posts.acf.short_description} img={posts.acf.banner_image.source_url} i={i} key={i+'opinion'}/>)}
+            {opinionData.map((posts,i)=><Card {...posts} desc={posts.acf.short_description} img={posts.acf.banner_image.localFile.childImageSharp.fluid} i={i} key={i+'opinion'} time={readingTime(posts.content).text}/>)}
         </Layout>
     )
 }
@@ -26,7 +27,14 @@ query opinionQuery {
           acf {
             short_description
             banner_image {
-              source_url
+                source_url
+                localFile {
+                  childImageSharp {
+                        fluid(maxWidth: 500) {
+                        src
+                      }
+                  }
+                }
             }
           }
         }

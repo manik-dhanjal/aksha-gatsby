@@ -35,7 +35,7 @@ const Opinion = ({data}) => {
                  <Head url='/opinion'>Opinion</Head>
                  <div className='scroll'>
                     <div className='card-cont'>
-                            {data.map((posts,i)=><Card {...posts} desc={posts.acf.short_description} img={posts.acf.banner_image.source_url} key={i+'opinion'}/>)}
+                            {data.map((posts,i)=><Card {...posts} desc={posts.acf.short_description} img={posts.acf.banner_image.localFile.childImageSharp.fluid} key={i+'opinion'}/>)}
                     </div>
                  </div>
             </div>

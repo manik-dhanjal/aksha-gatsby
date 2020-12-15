@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import parse from 'html-react-parser'
 import styled from 'styled-components'
-
+import Img from "gatsby-image"
 const Div = styled.div`
     .banner>div{
         display:flex;
@@ -17,16 +17,19 @@ const Div = styled.div`
                 margin-top:30px;
                 font-size:1.15em;
             }
+            .published{
+                margin-top:20px;
+            }
         }
         .image{
             width:50%;
             height:100%;
-            img{
-                object-fit:contain;
-                width:100%;
-                height:100%;
-                max-height:50vh;
+            &>div{
+                height:50vh;
             }
+        }
+        .reading-time{
+            margin-top:10px;
         }
     }
     & .content{
@@ -60,6 +63,8 @@ const Div = styled.div`
 `
 const SingleOpinion = ({pageContext}) => {
     const {title,content,acf} = pageContext.data
+
+   
     return (
         <Layout>
             
@@ -70,10 +75,14 @@ const SingleOpinion = ({pageContext}) => {
                             <div className='head'>
                                 <h1>{title}</h1>
                                 <p className='description'>{parse(acf.short_description)}</p>
+                                <div className='published'>
+                                    <strong>First Published:</strong> {acf.publishing_date}, {acf.publisher_name}
+                                </div>
+        
                             </div>
                             
                             <div className='image'>
-                                <img src={acf.banner_image.source_url} alt={title}/>
+                                <Img fluid={acf.banner_image.localFile.childImageSharp.fluid} alt={title}/>
                             </div>
                         </div>
                     </div>
