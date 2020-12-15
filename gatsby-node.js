@@ -1,4 +1,7 @@
 const path = require("path")
+const React = require('react')
+const ReactDOMServer = require('react-dom/server')
+const Img = require(`gatsby-image`)
 
 exports.createPages = async ({graphql,actions}) => {
     const {createPage}=actions
@@ -33,34 +36,17 @@ const opinionData = result.data.allWordpressWpOpinion.nodes;
 const SingleOpinionPage = path.resolve("./src/template/single-opinion.js") 
 
 
-opinionData.forEach((opinion) => { 
-  var slug= "/opinion/"+opinion.slug;
-  console.log("=================================================")
-  console.log(slug)
-  console.log("=================================================")
-  createPage({
-      path: slug,
-      component: SingleOpinionPage,
-      context: {
-          data:opinion
-      },
-  })
-})
-// projects.forEach((node,i) => { 
-//     var slug= node.categories[0].path.replace('/category','')+node.slug;
-//     console.log("=================================================")
-//     console.log(slug,i)
-//     console.log("=================================================")
-//     createPage({
-//         path: slug,
-//         component: projectpage,
-//         context: {
-//             project:node,
-//             nextProject:projects[i<projects.length-1?(i+1):0],
-//             prevProject:projects[i>0?(i-1):(projects.length-1)]
-//         },
-//     })
-// })
-
-
+    opinionData.forEach((opinion) => { 
+    var slug= "/opinion/"+opinion.slug;
+    console.log("=================================================")
+    console.log(slug)
+    console.log("=================================================")
+    createPage({
+        path: slug,
+        component: SingleOpinionPage,
+        context: {
+            data:opinion
+        },
+    })
+    })
 }
