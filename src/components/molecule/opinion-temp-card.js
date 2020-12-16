@@ -20,10 +20,10 @@ background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
             margin-bottom:20px;
         }
         p{
-            margin-bottom:30px;
+            margin-bottom:20px;
         }
         .reading-time{
-            margin-top:10px;
+            margin-bottom:30px;
         }
     }
     .image{
@@ -86,7 +86,6 @@ const Card = ({img,title,slug,desc,i,time}) => {
                         <h3>{title}</h3>
                         <p>{desc}</p>
                         <div className='reading-time'>
-                            jj
                                     <i class="far fa-clock"></i> {time}
                         </div>
                         <div className='readmore-btn'><Link to={slug}>READ MORE <i className="fas fa-long-arrow-alt-right"></i></Link></div>

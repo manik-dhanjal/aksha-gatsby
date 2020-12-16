@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import Footer from './footer'
 import Header from './header'
 import logo from '../../assets/images/logo.png'
-import favicon from '../../assets/images/favicon.png'
+// import favicon from '../../assets/images/favicon.png'
 import "../../assets/css/index.css"
 import '../../assets/fonts/Lato-Bold.ttf'	
 import '../../assets/fonts/Lato-Regular.ttf'
@@ -13,7 +13,7 @@ const Layout = ({children}) => {
         <>
             <Helmet>
                 <meta charset="utf-8" />
-                <link rel="icon" href={favicon} />
+                <link rel="icon" href={logo} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#000000" />
                 <meta
