@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import Img from "gatsby-image"
+import parse from 'html-react-parser'
 const Div = styled.div`
 background:${({i})=> i%2-1?'white':'rgb(247,247,247)'};
 .card{
@@ -83,7 +84,7 @@ const Card = ({img,title,slug,desc,i,time}) => {
                     <Img fluid={img} alt={title}/>
                     </div>
                     <div className='content'>
-                        <h3>{title}</h3>
+                        <h3>{parse(title)}</h3>
                         <p>{desc}</p>
                         <div className='reading-time'>
                                     <i class="far fa-clock"></i> {time}

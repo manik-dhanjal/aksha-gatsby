@@ -73,7 +73,7 @@ const SingleOpinion = ({pageContext}) => {
                     <div className='banner'>
                         <div className='container'>
                             <div className='head'>
-                                <h1>{title}</h1>
+                                <h1>{parse(title)}</h1>
                                 <p className='description'>{parse(acf.short_description)}</p>
                                 <div className='published'>
                                     <strong>First Published:</strong> {acf.publishing_date}, {acf.publisher_name}

@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'gatsby'
 import Img from "gatsby-image"
+import parse from 'html-react-parser'
 const Div =  styled.div`
 width:100%;
 .img-cont{
@@ -45,7 +46,7 @@ const Card = ({img,title,desc,slug}) => {
                 <Img fluid={img} alt={title}/>
             </div>
             <h3 className='title'>
-                {title}
+                {parse(title)}
             </h3>
             <p className='description'>
                 {desc}

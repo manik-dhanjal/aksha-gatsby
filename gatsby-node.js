@@ -7,7 +7,7 @@ exports.createPages = async ({graphql,actions}) => {
 const result = await graphql(`
                   
 query MyQuery {
-    allWordpressWpOpinion {
+  allWordpressWpOpinion(sort: {fields: acf___publishing_date, order: DESC}) {
       nodes {
         slug
         title

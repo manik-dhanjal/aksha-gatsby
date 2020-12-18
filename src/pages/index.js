@@ -27,7 +27,7 @@ export default Home
 
 export const query = graphql`
 query homeQuery {
-    allWordpressWpOpinion(limit: 3) {
+  allWordpressWpOpinion(limit:3 , sort: {fields: acf___publishing_date, order: DESC}) {
         nodes {
           slug
           title
