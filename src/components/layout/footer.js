@@ -108,7 +108,7 @@ const Footer = () => {
                     </ul>
                 </div>
                 <div className='copyright'>
-                    ©1999-2020 Bill & Melinda Qotaa Foundation. All Rights reserved.
+                    ©1999-2020 Bill & Melinda Gates Foundation. All Rights reserved.
                 </div>
             </div>
         </SFooter>
